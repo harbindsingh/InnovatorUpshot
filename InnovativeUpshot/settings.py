@@ -26,7 +26,7 @@ SECRET_KEY = 'bni%vorqo!idfcab0btdrwtw0tvb*rw@#@t(+prvl*2iucf7az'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['innovator-upshot-cmawg.ondigitalocean.app']
+ALLOWED_HOSTS = ['innovator-upshot-cmawg.ondigitalocean.app','www.innovativeupshot.in']
 
 
 # Application definition
