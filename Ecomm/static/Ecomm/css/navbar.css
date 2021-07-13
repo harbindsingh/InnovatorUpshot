@@ -1,0 +1,168 @@
+nav {
+  min-height: 5vh;
+  transition: 1.2s ease-in-out;
+  background: transparent;
+  transition: 1s ease-in;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+#brand-div {
+  height: 30%;
+}
+
+.navItems {
+  width: 50%;
+  list-style: none;
+  height: 100%;
+}
+
+.navItems li,
+.navItems a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.navItems a:hover {
+  text-shadow: 0.02em 0.08em 0.25em rgb(179, 177, 177);
+  color: rgb(224, 224, 224);
+}
+
+.dropdown-menu {
+  border: 2px solid #fff;
+  border-radius: 2em;
+  background: transparent;
+  animation: borderColorChange 2s ease-in 0s infinite;
+}
+.dropdown-menu li a:hover {
+  color: #fff;
+  background-color: inherit;
+  text-shadow: 0.02em 0.08em 0.25em rgb(179, 177, 177);
+  color: rgb(224, 224, 224);
+}
+#dropdownMenuLink {
+  cursor: pointer;
+}
+.separateerHr {
+  font-size: 2em;
+  font-weight: bolder;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+.bgBlack {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes borderColorChange {
+  0% {
+    border-top: 4px solid #ffa500;
+    border-left: 4px solid #0084ff;
+    border-right: 4px solid #0084ff;
+    border-bottom: 4px solid #00ff22;
+  }
+  25% {
+    border-top: 4px solid #0084ff;
+    border-left: 4px solid #00ff22;
+    border-right: 4px solid #ffa500;
+    border-bottom: 4px solid #0084ff;
+  }
+  50% {
+    border-top: 4px solid #00ff22;
+    border-left: 4px solid #0084ff;
+    border-right: 4px solid #0084ff;
+    border-bottom: 4px solid #ffa500;
+  }
+  75% {
+    border-top: 4px solid #0084ff;
+    border-left: 4px solid #ffa500;
+    border-right: 4px solid #00ff22;
+    border-bottom: 4px solid #0084ff;
+  }
+  100% {
+    border-top: 4px solid #ffa500;
+    border-left: 4px solid #0084ff;
+    border-right: 4px solid #0084ff;
+    border-bottom: 4px solid #00ff22;
+  }
+}
+
+.hamburger {
+  z-index: 100;
+  cursor: pointer;
+  font-size: 1.3em;
+  transition: 1s ease;
+}
+#IUlogo {
+  width: 10%;
+  z-index: 200;
+}
+hr.brandHr,
+hr.brandHr2,
+hr.brandHr3 {
+  height: 2px;
+}
+hr.brandHr {
+  width: 60%;
+}
+hr.brandHr2 {
+  width: 15%;
+}
+hr.brandHr3 {
+  width: 10%;
+}
+
+@media screen and (width: 768px) {
+  .navItems li {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  #IUlogo {
+    position: relative;
+    left: 50%;
+    width: 15%;
+  }
+  nav {
+    z-index: 100;
+    height: 7vh;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  .navItems {
+    z-index: 1000;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 5.5vh;
+    right: 0;
+    transform: translateY(-120%);
+    transition: all 0.8s ease-in-out;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  .navItems a,
+  .navItems li {
+    font-size: 1em;
+    font-weight: 300;
+  }
+  .showNav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .dropdown-menu {
+    width: 100vw;
+    background-color: inherit;
+    border: none;
+    animation: none;
+  }
+}

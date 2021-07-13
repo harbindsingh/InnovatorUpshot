@@ -1,0 +1,11 @@
+.prodCard {
+  width: 30vw;
+}
+hr.categoryHR {
+  background-color: #fff;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}

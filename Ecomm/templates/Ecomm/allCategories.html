@@ -1,0 +1,61 @@
+{% extends "Ecomm/base.html" %}
+
+{% block title %}All Categories{% endblock %}
+
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'Ecomm\css\allCategories.css' %}">
+<link rel="stylesheet" href="{% static 'Ecomm\css\productSlider.css' %}">
+
+{% endblock %}
+
+{% block body %}
+<div class="bannerDiv">
+    <img src="../../static/Ecomm/images/bg_aboutUs 1.png" alt="">
+</div>
+
+<nav aria-label="breadcrumb" class="container my-3" id="breadcrumbNav">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-dark">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">All Categories</li>
+    </ol>
+</nav>
+
+<section class="d-md-flex container">
+    <div>
+        <div>
+            {% for category, allProducts in category_product.items %}
+            <h1 class="mx-3"><a href="#">{{category}}</a></h1>
+            <hr class="allCategoryHR">
+            {% include 'Ecomm/productSlider.html' %}
+            {% endfor %}
+        </div>
+        <div class=" my-5">
+            <h1>HomeLightings</h1>
+
+            <hr class="allCategoryHR">
+        </div>
+    </div>
+
+    <div class="category-sidenav text-center d-none d-md-block">
+        <h4 class="py-2">All Categories</h4>
+        <hr class="m-0">
+        <ul class="m-0 p-0">
+            {% for category in category_product.keys %}
+            <li class="py-3">
+                <a href="{% url 'category' category %}">{{category}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'Ecomm\js\prodSlider.js' %}"></script>
+{% endblock %}

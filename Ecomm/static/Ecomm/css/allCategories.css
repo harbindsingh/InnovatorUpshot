@@ -1,0 +1,53 @@
+hr.allCategoryHR {
+  background-color: #fff;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+.bannerDiv {
+  overflow-x: hidden;
+}
+.bannerDiv img {
+  width: 100%;
+}
+
+h1 a,
+h1 a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.category-sidenav {
+  position: sticky;
+  right: 5vw;
+  top: 15vh;
+  width: 20vw;
+  height: fit-content;
+  border: 1px solid blue;
+  border-radius: 1em;
+}
+.category-sidenav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+li {
+  list-style: none;
+}
+.category-sidenav hr {
+  background-color: #fff;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+.category-sidenav h4 {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  background-color: rgba(204, 143, 114, 0.507);
+}

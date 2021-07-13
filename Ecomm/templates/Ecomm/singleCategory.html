@@ -1,0 +1,40 @@
+{% extends "Ecomm/base.html" %}
+
+{% block title %}{{category}}{% endblock %}
+
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'Ecomm\css\categoryPage.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb" class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-dark">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'allCategories' %}" class="text-dark">All Categories</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{category}}</li>
+        </ol>
+    </nav>
+    <h1>{{category}}</h1>
+    <hr class="categoryHR">
+    {% for product in Products %}
+    <div class="d-flex flex-wrap ">
+        <div class="card prodCard">
+            <img src="/media/{{product.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <a href="{% url 'product' product.id product.name %}" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

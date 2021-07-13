@@ -1,0 +1,15 @@
+.imgs,
+.imgsOn {
+  background-color: brown;
+  height: 124px;
+  width: 124px;
+  border: 1px solid blue;
+}
+
+.imgsOn:hover {
+  background-color: chartreuse;
+  opacity: 0.7;
+}
+.slider {
+  overflow-x: hidden;
+}

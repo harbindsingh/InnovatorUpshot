@@ -1,0 +1,57 @@
+{% load static %}
+<div class="d-flex flex-column justify-content-between mobilescreen">
+    <!-- showcase nav mobile -->
+    <div class="d-flex justify-content-between bg-dark text-white align-items-center">
+        <h5 class="m-2">OnBeat</h5>
+        <div><i class="bi bi-arrow-clockwise mx-2"></i>
+            <i class="bi bi-sliders mx-2"></i>
+            <i class="bi bi-power text-success mx-2"></i>
+            <i class="bi bi-three-dots-vertical mx-2"></i>
+            <i class="bi bi-volume-mute-fill mx-2"></i>
+        </div>
+    </div>
+    <!-- on beat logo -->
+    <div class="d-flex justify-content-center" id="onBeatCenter">
+        <div><img src="{% static 'Ecomm\images\center-logo.png' %}" alt="onBeat-logo" id="onBeatCenter-img" class="">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" id="onBeatFlair">
+        <div><img src="{% static 'Ecomm\images\outer-beat.png' %}" alt="onBeat-logo" class="outerBeat"></div>
+    </div>
+
+
+    <!-- buttons at bottom of screen -->
+    <div id="buttonsDiv" class="m-3 d-flex flex-column align-items-between justify-content-end">
+        <div class="song-slider">
+            <div class="d-flex songs-container">
+                <div class="text-white songSelector" data-targetVideo="/media/{{videos.0.video}}"
+                    data-beatVideo="/media/{{videos.1.video}}">Song1</div>
+                <div class="text-white songSelector" data-targetVideo="/media/{{videos.2.video}}"
+                    data-beatVideo="/media/{{videos.3.video}}">Song2</div>
+                <div class="text-white songSelector">Song3</div>
+                <div class="text-white songSelector">Song4</div>
+                <div class="text-white songSelector">Song5</div>
+                <div class="text-white songSelector">Song6</div>
+                <div class="text-white songSelector">Song7</div>
+                <div class="text-white songSelector">Song8</div>
+            </div>
+            <button id="songPrevBtn"><i class="bi bi-caret-left-fill"></i></button>
+            <button id="songNextBtn"><i class="bi bi-caret-right-fill"></i></button>
+        </div>
+
+        <h5 class="text-white">Pick Color :</h5>
+        <div>
+            <button class="btn colorPickbtn m-1" id="redbtn" data-targetColor='rgba(255, 0, 0, 0.3)'></button>
+            <button class="btn colorPickbtn m-1" id="yellowbtn" data-targetColor='rgba(255, 255, 0, 0.3)'></button>
+            <button class="btn colorPickbtn m-1" id="purplebtn" data-targetColor='rgba(167, 49, 240, 0.3)'></button>
+            <button class="btn colorPickbtn m-1" id="orangebtn" data-targetColor='rgba(237, 98, 12, 0.3)'></button>
+        </div>
+        <div>
+            <button class="btn colorPickbtn m-1" id="bluebtn" data-targetColor='rgba(0, 0, 255, 0.3)'></button>
+            <button class="btn colorPickbtn m-1" id="pinkbtn" data-targetColor='rgba(237, 12, 222, 0.3)'></button>
+            <button class="btn colorPickbtn m-1" id="greenbtn" data-targetColor='rgba(0, 255, 0, 0.3)'></button>
+            <button class="btn colorPickbtn m-1" id="whitebtn" data-targetColor='rgba(255, 255, 255, 0.3)'></button>
+        </div>
+
+    </div>
+</div>

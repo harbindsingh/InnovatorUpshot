@@ -1,0 +1,145 @@
+#newProductSection {
+  overflow-x: hidden;
+}
+#videoBgSection {
+  background-color: rgb(0, 0, 0);
+  z-index: -10;
+  height: 40em;
+  overflow: hidden;
+}
+#videoBg {
+  width: 100%;
+}
+#mute-btn,
+#sound-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 3em;
+  position: relative;
+  top: -17em;
+  left: -2em;
+}
+#checkProductbtn {
+  background: rgba(255, 166, 0, 0.6);
+  position: relative;
+  top: -26em;
+  left: 70em;
+  border: 2px solid #fff;
+  border-radius: 2em;
+}
+#checkProductbtn a {
+  text-decoration: none;
+}
+
+#featureSection {
+  position: relative;
+  top: -4em;
+}
+#featureSection .card {
+  animation: bdrColorChange 2s ease-in 0s infinite;
+}
+.accordion-item {
+  width: 30%;
+}
+.accordion-flush .accordion-item:first-of-type .accordion-button.collapsed {
+  border-top-width: 2px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+.accordion-flush .accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-width: 2px;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+.accordion-flush .accordion-button.collapsed {
+  border: 2px solid rgb(99, 99, 99);
+  border-radius: 1em;
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+  border-bottom-width: 0;
+}
+
+@keyframes bdrColorChange {
+  0% {
+    border-top: 2px solid #ffa500;
+    border-left: 2px solid #0084ff;
+    border-right: 2px solid #0084ff;
+    border-bottom: 2px solid #00ff22;
+  }
+  25% {
+    border-top: 2px solid #0084ff;
+    border-left: 2px solid #00ff22;
+    border-right: 2px solid #ffa500;
+    border-bottom: 2px solid #0084ff;
+  }
+  50% {
+    border-top: 2px solid #00ff22;
+    border-left: 2px solid #0084ff;
+    border-right: 2px solid #0084ff;
+    border-bottom: 2px solid #ffa500;
+  }
+  75% {
+    border-top: 2px solid #0084ff;
+    border-left: 2px solid #ffa500;
+    border-right: 2px solid #00ff22;
+    border-bottom: 2px solid #0084ff;
+  }
+  100% {
+    border-top: 2px solid #ffa500;
+    border-left: 2px solid #0084ff;
+    border-right: 2px solid #0084ff;
+    border-bottom: 2px solid #00ff22;
+  }
+}
+
+#afterNewProdSection {
+  background-color: #fff;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+#GooglePlayBtn {
+  width: 30%;
+}
+#GooglePlayBtn img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  #videoBg {
+    width: auto;
+    height: 40em;
+  }
+  #checkProductbtn {
+    top: -10em;
+    left: 50em;
+  }
+  #mute-btn,
+  #sound-btn {
+    top: -10em;
+    left: -2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #videoBgSection {
+    overflow-x: hidden;
+  }
+  #videoBg {
+    width: auto;
+    height: 40em;
+  }
+  .accordion-item {
+    width: 100%;
+  }
+  #checkProductbtn {
+    top: -10em;
+    left: 10em;
+  }
+}

@@ -1,0 +1,107 @@
+{% extends "Ecomm/base.html" %}
+
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'Ecomm\css\productSlider.css' %}">
+<link rel="stylesheet" href="{% static 'Ecomm\css\product.css' %}">
+<link rel="stylesheet" href="{% static 'Ecomm\css\OnBeatMobile.css' %}">
+<style>
+    #bg-parallax {
+        background-image: url("/media/{{product.thumbnail}}");
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- VIDEO BACKGROUND section -->
+<div id="videoBg">
+    <video autoplay muted loop id="bgVideo">
+        <source src="/media/{{product.main_video}}" id="bgVideoSrc" type="video/mp4">
+    </video>
+    <div id="videoCover"></div>
+    <div id="mobileScreen" class="">
+        {% include 'Ecomm/OnBeatMobile.html' %}
+    </div>
+</div>
+
+<!-- PRODUCT FEATURE section -->
+<section id="bg-parallax" class="mb-5 pb-3">
+    <div class="d-flex flex-column align-items-center arrow-div">
+        <div>
+            <a href="#features-container"><i id="arrow1" class="bi bi-chevron-compact-down"></i></a>
+        </div>
+        <div>
+            <a href="#features-container"><i id="arrow2" class="bi bi-chevron-compact-down"></i></a>
+        </div>
+        <div>
+            <a href="#features-container"><i id="arrow3" class="bi bi-chevron-compact-down"></i></a>
+        </div>
+    </div>
+    <div id="features-container" class="d-md-flex flex-wrap justify-content-center container">
+        {% for feature in features %}
+        <div class="featureCard m-1 text-center d-flex flex-column justify-content-center">
+            <h2 class="">{{feature.name}}</h2>
+            <p class="d-none">{{feature.description}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<nav aria-label="breadcrumb" class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-dark">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{product.name}}</li>
+    </ol>
+</nav>
+<!-- PRODUCT DESCRIPTION section -->
+<section class="d-lg-flex justify-content-between my-5 container-xl">
+    <div class="small-imgs d-flex d-lg-block">
+        {%for image in images %}
+        {% if forloop.first %}
+        <div class="m-1">
+            <img src="/media/{{image.image}}" alt="{{image.image}}" imgTarget="{{image.image}}{{image.id}}"
+                class="active-img">
+        </div>
+        {% else %}
+        <div class="m-1">
+            <img src="/media/{{image.image}}" alt="{{image.image}}" imgTarget="{{image.image}}{{image.id}}">
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="display-image">
+        {%for image in images %}
+        <div class="m-1">
+            {% if forloop.first %}
+            <img src="/media/{{image.image}}" alt="{{image.image}}" id="{{image.image}}{{image.id}}" class="">
+            {% else %}
+            <img src="/media/{{image.image}}" alt="{{image.image}}" id="{{image.image}}{{image.id}}" class='d-none '>
+            {%endif%}
+        </div>
+        {% endfor %}
+    </div>
+    <div id="product-describe" class="px-4">
+        <h1>{{product.name}}</h1>
+        <p>{{product.description}}</p>
+        <p>To buy product place order on whatsapp : +91 9998889997</p>
+    </div>
+</section>
+
+<!-- RECOMMENDED PRODUCTS section -->
+<h2 class="container mt-5">Recommended Products</h2>
+{% include 'Ecomm/productSlider.html' %}
+
+
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'Ecomm\js\prodSlider.js' %}"></script>
+<script type="text/javascript" src="{% static 'Ecomm\js\product.js' %}"></script>
+<script type="text/javascript" src="{% static 'Ecomm\js\onBeatMobile.js' %}"></script>
+
+
+
+{% endblock %}
+
+{% endblock %}

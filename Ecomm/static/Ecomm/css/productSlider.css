@@ -1,0 +1,42 @@
+.prodcard-slider {
+  overflow-x: hidden;
+  position: relative;
+  margin: 2em 4em;
+}
+.prodcard-slider .card {
+  margin-right: 1em;
+  width: 25em;
+}
+#prodNextBtn,
+#prodPrevBtn {
+  position: absolute;
+  top: 45%;
+  background: transparent;
+  background-color: rgba(165, 165, 165, 0.5);
+  border: thin solid rgb(192, 192, 192);
+  border-radius: 50%;
+  font-size: large;
+}
+#prodNextBtn {
+  right: 0%;
+}
+#prodPrevBtn {
+  left: 0%;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .prodcard-slider .card {
+    margin-right: 1em;
+    width: 20em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .prodcard-slider {
+    margin: 2em 2em;
+  }
+  .prodcard-slider .card {
+    margin-right: 1em;
+    min-width: 15em;
+  }
+}

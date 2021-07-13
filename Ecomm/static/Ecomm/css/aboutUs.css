@@ -1,0 +1,27 @@
+.aboutUsDiv {
+  padding: 5em 3em;
+  min-height: max-content;
+  background-clip: border-box;
+  background-image: url("../images/bg_aboutUs.png"),
+    url("../images/IU_logo.png");
+  background-blend-mode: luminosity;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.abouUShead h1 {
+  letter-spacing: 0.4em;
+  line-height: 2em;
+}
+.aboutUsContent {
+  border-left: 1px solid rgb(153, 153, 153);
+}
+@media screen and (max-width: 766px) {
+  .aboutUsDiv {
+    padding: 0;
+  }
+  .aboutUsContent {
+    border-left: none;
+  }
+}

@@ -1,0 +1,111 @@
+{% extends "Ecomm/base.html" %}
+
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'Ecomm\css\index.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'Ecomm\css\autoSlider.css' %}"> -->
+<link rel="stylesheet" href="{% static 'Ecomm\css\productSlider.css' %}">
+<link rel="stylesheet" href="{% static 'Ecomm\css\upComingProducts.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<!-- new product section with background video START -->
+
+<section id="newProductSection">
+
+    <!-- video background section -->
+
+    <section id="videoBgSection">
+        <video autoplay muted loop id="videoBg">
+            <source src="/media/{{newProduct.main_video}}" type="video/mp4">
+        </video>
+        <button id="checkProductbtn" class="p-2">
+            <a href="{% url 'product' newProduct.id newProduct.name %}" class="text-white">
+                Check This Product</a>
+        </button>
+        <button id="mute-btn"><i class="bi bi-volume-mute-fill"></i></button>
+        <button id="sound-btn" class="d-none"><i class="bi bi-volume-up-fill "></i></button>
+    </section>
+
+    <!-- features of new products -->
+
+    <section id="featureSection">
+
+        <!-- primary features section -->
+
+        <div class="d-md-flex justify-content-around mx-5">
+            {% for feature in primaryFeatures %}
+            <div class="card m-4">
+                <div class="card-body">
+                    <h4 class="card-title">{{ feature.name }}</h4>
+                    <p class="card-text">{{feature.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- secondary features section -->
+
+        <div class="accordion accordion-flush d-md-flex flex-md-wrap justify-content-around container"
+            id="accordionFlushExample">
+            {% for feature in secondaryFeatures %}
+            <div class="accordion-item my-2">
+                <h2 class="accordion-header" id="flush-heading{{feature.id}}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapse{{feature.id}}" aria-expanded="false"
+                        aria-controls="flush-collapse{{feature.id}}">
+                        <strong>{{feature.name}}</strong>
+                    </button>
+                </h2>
+                <div id="flush-collapse{{feature.id}}" class="accordion-collapse collapse"
+                    aria-labelledby="flush-heading{{feature.id}}" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">{{feature.description}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+</section>
+
+<hr id="afterNewProdSection" class="m-0">
+<!-- new product section with background video END -->
+<section class="my-5">
+    <h1 class="text-center">Up Coming Products...</h1>
+    {% include 'Ecomm/upcomingProducts.html' %}
+</section>
+<!-- ABOUT US section -->
+{% include 'Ecomm/aboutUs.html' %}
+
+<!-- PREVIOUS PRODUCTS section -->
+<section class="container my-5">
+    <h1 class="my-3 text-center">Our Products ...</h1>
+    {% include 'Ecomm/productSlider.html' %}
+</section>
+
+<!-- WHERE TO GET NEW PRODUCT section -->
+<section class="container my-5">
+    <h1 class="text-center">Get Our App(s) From Here:</h1>
+
+    <div class="d-flex justify-content-center">
+        <a id="GooglePlayBtn" href={{newProduct.googleplay_url}}>
+            <img alt='Get it on Google Play'
+                src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' /></a>
+    </div>
+</section>
+
+<!-- LED section -->
+<!-- {% include 'Ecomm/autoSlider.html' %} -->
+
+
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'Ecomm\js\index.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'Ecomm\js\autoSlider.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'Ecomm\js\prodSlider.js' %}"></script>
+{% endblock %}
+
+{% endblock %}

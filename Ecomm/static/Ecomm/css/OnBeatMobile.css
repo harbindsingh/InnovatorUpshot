@@ -1,0 +1,155 @@
+.mobilescreen {
+  width: 25%;
+  height: 100%;
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #434343,
+    #000000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #434343,
+    #000000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 0.2em 0.4em 0 rgba(255, 255, 255, 0.2),
+    0 0.3em 1em 0 rgba(255, 255, 255, 0.19);
+}
+.bi-volume-mute-fill {
+  cursor: pointer;
+}
+
+#onBeatCenter {
+  z-index: 70;
+  position: relative;
+  top: 4.5em;
+  left: 0;
+}
+#onBeatFlair {
+  z-index: 50;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#onBeatCenter-img {
+  height: 3em;
+  cursor: pointer;
+}
+.outerBeat {
+  height: 6em;
+  transition: 1s ease;
+}
+.outerBeatEffect {
+  animation: party 1s infinite linear;
+}
+.rotate {
+  animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes party {
+  0% {
+    transform: scale(0.8);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.3);
+  }
+  60% {
+    transform: scale(1.5);
+  }
+  80% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+#buttonsDiv {
+  height: 60%;
+}
+#buttonsDiv div {
+  width: 100%;
+  height: 20%;
+}
+
+#buttonsDiv .song-slider {
+  overflow-x: hidden;
+  position: relative;
+}
+#buttonsDiv .songs-container {
+  height: fit-content;
+}
+#buttonsDiv .songs-container div {
+  cursor: pointer;
+  margin: 0 7em;
+  width: 100%;
+}
+
+#songNextBtn,
+#songPrevBtn {
+  position: absolute;
+  background: transparent;
+  background-color: rgba(165, 165, 165, 0.5);
+  border: thin solid rgb(192, 192, 192);
+  border-radius: 50%;
+  font-size: large;
+}
+#songNextBtn {
+  right: 0%;
+}
+#songPrevBtn {
+  left: 0%;
+  display: none;
+}
+
+.colorPickbtn {
+  height: 80%;
+  width: 20%;
+}
+
+#redbtn {
+  background-color: rgba(255, 0, 0, 1);
+}
+#yellowbtn {
+  background-color: rgba(255, 255, 0, 1);
+}
+#purplebtn {
+  background-color: rgba(167, 49, 240, 1);
+}
+#orangebtn {
+  background-color: rgba(237, 98, 12, 1);
+}
+#bluebtn {
+  background-color: rgba(0, 0, 255, 1);
+}
+#pinkbtn {
+  background-color: rgba(237, 12, 222, 1);
+}
+#greenbtn {
+  background-color: rgba(0, 255, 0, 1);
+}
+#whitebtn {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 1024px) {
+  .mobilescreen {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobilescreen {
+    width: 80%;
+  }
+}

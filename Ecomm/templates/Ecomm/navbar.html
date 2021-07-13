@@ -1,0 +1,46 @@
+{% load static %}
+<nav class="d-flex align-items-center fixed-top py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div id="brand-div">
+            <a href="{% url 'home' %}">
+                <div class="d-flex align-items-center">
+                    <img src="{% static 'Ecomm\images\IU_logo.png' %}" alt="Innovative Upshot Logo" id="IUlogo"
+                        class="my-md-1 " />
+                    <div class="mx-2 d-none d-md-block d-flex flex-column align-items-start">
+                        <h5 class="m-0"><strong>INNOVATIVE</strong></h5>
+                        <div class="d-flex">
+                            <hr class="m-0 brandHr">
+                            <hr class="my-0 mx-1 brandHr2">
+                            <hr class="my-0 brandHr3">
+                        </div>
+                        <h5 class="m-0"><strong> UPSHOT</strong></h5>
+
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="d-md-none hamburger">
+            <span id="hamList" class="text-white"><i class="bi bi-list"></i></span>
+        </div>
+        <ul class="d-flex flex-column flex-md-row justify-content-evenly align-items-center navItems mb-0 me-md-5 p-0">
+            <li class="mx-3"><a href="{% url 'home' %}">Home</a></li>
+            <li class="mx-3" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#">
+                    <div class="d-flex align-items-center">
+                        <p class="m-0">Products</p> <i class="bi bi-caret-down-fill"></i>
+                    </div>
+                </a>
+            </li>
+            <ul class="dropdown-menu p-0  text-center" aria-labelledby="dropdownMenuLink">
+                {% for category in categories %}
+                <li><a class="dropdown-item p-2 px-md-5" href="{% url 'category' category.0 %}">{{category.0}}</a>
+                </li>
+                {% endfor %}
+                <hr class="m-0 separateerHr">
+                <li><a class="dropdown-item p-2 px-md-5" href="{% url 'allCategories' %}">All Categories</a></li>
+
+            </ul>
+        </ul>
+    </div>
+</nav>
