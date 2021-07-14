@@ -4,7 +4,7 @@ from .models import *
 from django.views.generic import ListView
 
 # Create your views here.
-def Index(request):
+def indexView(request):
     newProduct = Product.objects.get(new_product=True)
     primaryFeatures = Feature.objects.filter(product_name=newProduct, primary_feature=True)
     secondaryFeatures = Feature.objects.filter(product_name=newProduct, primary_feature=False)
