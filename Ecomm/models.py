@@ -12,7 +12,7 @@ class Product(models.Model):
     googleplay_url = models.CharField(max_length=200, default="null")
 
     def __str__(self):
-        return self.name+str(self.id)
+        return self.name
 
     def save(self, *args, **kwargs):
         try:
